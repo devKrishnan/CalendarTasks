@@ -21,7 +21,6 @@ class DayCell: UICollectionViewCell {
         borderView = UIView(frame: frame)
         borderView.backgroundColor = UIColor.lightGray
         self.contentView.addSubview(borderView)
-        self.backgroundColor = UIColor.red
     }
     override func layoutSubviews() {
         super.layoutSubviews()

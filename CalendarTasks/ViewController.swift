@@ -13,8 +13,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         var yearList: [Year] = []
-        for _ in 0 ..< 4 {
-            if let year =  Year(currentYear: 2017){
+        for i in 0 ..< 4 {
+            if let year =  Year(currentYear: 2017+i){
                yearList.append(year)
             }
             else{

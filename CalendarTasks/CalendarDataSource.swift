@@ -64,6 +64,9 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource, UICollectionView
         if (dayIndex >= 0 && dayIndex < month.dayList.count)
         {
             currentDay = month.dayList[dayIndex]
+            if (dayIndex == 0) {
+                cell.monthLabel.text = dateFormatter.shortMonthSymbols[monthIndex]
+            }
             
         }else if (dayIndex >= 0 && dayIndex >= month.dayList.count && nextMonthIndex < nextYear.monthList.count){
             let nextMonth = nextYear.monthList[nextMonthIndex]

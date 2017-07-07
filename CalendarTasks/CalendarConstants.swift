@@ -9,6 +9,6 @@
 import Foundation
 
 struct CalendarConstants {
-    static let totalNumberOfDays = 7
+    static let totalNumberOfDaysInWeek = 7
     static let totalMonths =  12
 }

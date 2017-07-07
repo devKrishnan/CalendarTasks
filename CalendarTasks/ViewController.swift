@@ -12,8 +12,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        var yearList: [Year] = []
+        for _ in 0 ..< 4 {
+            if let year =  Year(currentYear: 2017){
+               yearList.append(year)
+            }
+            else{
+                let alertController : UIAlertController = UIAlertController(title: "Invalid Data", message: "The calendar can not be displayed", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction.init(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
+                return
+            }
+            
+        }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let calendar = storyboard.instantiateViewController(withIdentifier: "CalendarViewController")
+        let calendar : CalendarViewController = storyboard.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
+        calendar.years = yearList
         let tasks = storyboard.instantiateViewController(withIdentifier: "TasksTableViewController")
         self.addChildViewController(calendar)
         calendar.view.frame = self.frameForCalendarController();

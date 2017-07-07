@@ -13,7 +13,7 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource, UICollectionView
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         
-        return CalendarConstants.totalNumberOfDays * 4
+        return CalendarConstants.totalNumberOfDaysInWeek * 4
     }
     
     
@@ -31,7 +31,7 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource, UICollectionView
     }
    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-        return CGSize(width: collectionView.bounds.size.width / CGFloat(CalendarConstants.totalNumberOfDays), height: 44.0)
+        return CGSize(width: collectionView.bounds.size.width / CGFloat(CalendarConstants.totalNumberOfDaysInWeek), height: 44.0)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0

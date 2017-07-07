@@ -60,43 +60,39 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pGI-0a-gH3">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="50" height="44"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DayCell" id="PjB-GL-S5d" customClass="DayCell" customModule="CalendarTasks" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0M-i7-JTg">
-                                                    <rect key="frame" x="9" y="23" width="30" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0M-i7-JTg">
+                                                    <rect key="frame" x="9" y="22" width="30" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXs-f1-ujQ">
-                                                    <rect key="frame" x="4" y="0.0" width="42" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXs-f1-ujQ">
+                                                    <rect key="frame" x="4" y="0.0" width="38" height="21.5"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="ZXs-f1-ujQ" firstAttribute="top" secondItem="PjB-GL-S5d" secondAttribute="topMargin" constant="-8" id="2bI-9t-VbH"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="ZXs-f1-ujQ" secondAttribute="bottom" constant="21" id="I1F-pZ-s12"/>
-                                            <constraint firstItem="N0M-i7-JTg" firstAttribute="top" secondItem="PjB-GL-S5d" secondAttribute="topMargin" constant="15" id="QPd-9n-6YX"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="N0M-i7-JTg" secondAttribute="bottom" constant="-2" id="ZXi-ga-9jy"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="ZXs-f1-ujQ" secondAttribute="trailing" constant="-4" id="aPM-hv-rll"/>
-                                            <constraint firstItem="N0M-i7-JTg" firstAttribute="leading" secondItem="PjB-GL-S5d" secondAttribute="leadingMargin" constant="1" id="elm-X1-3qf"/>
-                                            <constraint firstItem="ZXs-f1-ujQ" firstAttribute="leading" secondItem="PjB-GL-S5d" secondAttribute="leadingMargin" constant="-4" id="otF-6I-uds"/>
-                                            <constraint firstItem="ZXs-f1-ujQ" firstAttribute="centerX" secondItem="PjB-GL-S5d" secondAttribute="centerX" id="xLc-pq-WsA"/>
-                                        </constraints>
+                                        <connections>
+                                            <outlet property="dayLabel" destination="N0M-i7-JTg" id="lyQ-3W-yf6"/>
+                                            <outlet property="monthLabel" destination="ZXs-f1-ujQ" id="RVP-Re-kaA"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>

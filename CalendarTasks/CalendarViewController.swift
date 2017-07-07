@@ -10,7 +10,7 @@ import UIKit
 
 class CalendarViewController: UIViewController {
     var dataSource : CalendarDataSource!
-    var years : [Year]?
+    var years : [Year] = []
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()

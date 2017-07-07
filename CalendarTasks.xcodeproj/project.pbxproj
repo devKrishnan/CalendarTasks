@@ -29,6 +29,9 @@
 		C4B310F71F0FBC8E003F148F /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B310F61F0FBC8E003F148F /* DayCell.swift */; };
 		C4B310F81F0FBC8E003F148F /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B310F61F0FBC8E003F148F /* DayCell.swift */; };
 		C4B310F91F0FBC8E003F148F /* DayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B310F61F0FBC8E003F148F /* DayCell.swift */; };
+		C4B310FB1F0FC9A5003F148F /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B310FA1F0FC9A5003F148F /* CalendarModel.swift */; };
+		C4B310FC1F0FC9A5003F148F /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B310FA1F0FC9A5003F148F /* CalendarModel.swift */; };
+		C4B310FD1F0FC9A5003F148F /* CalendarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B310FA1F0FC9A5003F148F /* CalendarModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,7 @@
 		C4B310EE1F0FBAC8003F148F /* CalendarDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarDataSource.swift; sourceTree = "<group>"; };
 		C4B310F21F0FBC05003F148F /* CalendarConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarConstants.swift; sourceTree = "<group>"; };
 		C4B310F61F0FBC8E003F148F /* DayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayCell.swift; sourceTree = "<group>"; };
+		C4B310FA1F0FC9A5003F148F /* CalendarModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +132,7 @@
 				C4B310EE1F0FBAC8003F148F /* CalendarDataSource.swift */,
 				C4B310F21F0FBC05003F148F /* CalendarConstants.swift */,
 				C4B310F61F0FBC8E003F148F /* DayCell.swift */,
+				C4B310FA1F0FC9A5003F148F /* CalendarModel.swift */,
 			);
 			path = CalendarTasks;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4B310EF1F0FBAC8003F148F /* CalendarDataSource.swift in Sources */,
+				C4B310FB1F0FC9A5003F148F /* CalendarModel.swift in Sources */,
 				C4B310E71F0FB355003F148F /* CalendarViewController.swift in Sources */,
 				C4B310BB1F0FB252003F148F /* ViewController.swift in Sources */,
 				C4B310F71F0FBC8E003F148F /* DayCell.swift in Sources */,
@@ -298,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B310FC1F0FC9A5003F148F /* CalendarModel.swift in Sources */,
 				C4B310F01F0FBAC8003F148F /* CalendarDataSource.swift in Sources */,
 				C4B310EC1F0FB377003F148F /* CalendarViewController.swift in Sources */,
 				C4B310EA1F0FB373003F148F /* TasksTableViewController.swift in Sources */,
@@ -311,6 +318,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4B310FD1F0FC9A5003F148F /* CalendarModel.swift in Sources */,
 				C4B310F11F0FBAC8003F148F /* CalendarDataSource.swift in Sources */,
 				C4B310ED1F0FB377003F148F /* CalendarViewController.swift in Sources */,
 				C4B310EB1F0FB373003F148F /* TasksTableViewController.swift in Sources */,

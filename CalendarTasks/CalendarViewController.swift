@@ -49,7 +49,7 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewDele
             let year = years[indexPath.section / 12]
             let month = year.monthList[indexPath.section % 12]
             if let callback = self.onMonthYearUpdate {
-                callback(dateFormatter.shortMonthSymbols[month.month] + " " + String(year.year ))
+                callback(dateFormatter.shortMonthSymbols[month.month-1] + " " + String(year.year ))
             }
         
         }

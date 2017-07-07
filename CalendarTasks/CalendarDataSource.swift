@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CalendarDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class CalendarDataSource: NSObject, UICollectionViewDataSource {
     var  years : [Year] = []
     var ignoreFirstRowForNextSection : Bool = false
     let dateFormatter = DateFormatter()
@@ -92,14 +92,6 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource, UICollectionView
         return  years.count * CalendarConstants.totalMonths
     }
    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize{
-        return CGSize(width: collectionView.bounds.size.width / CGFloat(CalendarConstants.totalNumberOfDaysInWeek), height: 44.0)
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
+   
 
 }

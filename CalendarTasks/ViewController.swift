@@ -28,6 +28,9 @@ class ViewController: UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let calendar : CalendarViewController = storyboard.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
         calendar.years = yearList
+        calendar.onMonthYearUpdate = {(text: String) -> Void in
+            self.navigationItem.title = text
+        }
         let tasks = storyboard.instantiateViewController(withIdentifier: "TasksTableViewController")
         self.addChildViewController(calendar)
         calendar.view.frame = self.frameForCalendarController();

@@ -45,7 +45,7 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewDele
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let list = self.collectionView .indexPathsForVisibleItems
-        if let indexPath  = list.first{
+        if let indexPath  = list.last{
             let year = years[indexPath.section / 12]
             let month = year.monthList[indexPath.section % 12]
             if let callback = self.onMonthYearUpdate {

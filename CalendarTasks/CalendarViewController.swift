@@ -11,7 +11,7 @@ import UIKit
 class CalendarViewController: UIViewController {
     var dataSource : CalendarDataSource!
     var years : [Year] = []
-    @IBOutlet weak var calendarHeaderView: UIView!
+    @IBOutlet weak var calendarHeaderView: UIStackView!
     let dateFormatter  = DateFormatter()
     var onMonthYearUpdate : ( (_ monthText: String)->Void)?
     @IBOutlet weak var collectionView: UICollectionView!

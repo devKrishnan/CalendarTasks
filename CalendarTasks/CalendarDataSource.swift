@@ -12,9 +12,8 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
     var  years : [Year] = []
     var ignoreFirstRowForNextSection : Bool = false
     let dateFormatter = DateFormatter()
-    var calendarHeaderView : UIView?
+    var calendarHeaderView : UIStackView?
     public func addDaysInHeader(collectionView : UICollectionView){
-        var originX : CGFloat = 0.0
         if let header =  calendarHeaderView{
             let size = CGSize(width: header.frame.size.width / CGFloat(CalendarConstants.totalNumberOfDaysInWeek), height: 43.0)
             let symbols = dateFormatter.shortWeekdaySymbols
@@ -22,10 +21,8 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
                 let label = UILabel(frame: CGRect.zero)
                 label.textAlignment = NSTextAlignment.center
                 label.frame.size = size
-                label.frame.origin =  CGPoint(x: originX, y: 0)
-                originX = originX + size.width+5
                 label.text = symbols?[i]
-                calendarHeaderView?.addSubview(label)
+                calendarHeaderView?.addArrangedSubview(label)
             }
 
         }
@@ -58,7 +55,7 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
     @available(iOS 6.0, *)
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell : DayCell = collectionView.dequeueReusableCell(withReuseIdentifier: "DayCell", for: indexPath) as! DayCell
-        cell.monthLabel.text = nil
+        cell.monthLabel.text = ""
         let yearIndex = indexPath.section / CalendarConstants.totalMonths
         let monthIndex = indexPath.section % CalendarConstants.totalMonths
         let year = years[yearIndex]

@@ -20,7 +20,7 @@ func dateFromComponents(year: Int, month: Int, day : Int) -> Date? {
     let components = dateComponents(year: year, month: month, day: day)
     return  globalCalendar().date(from: components)
 }
-func globalCalendar() -> Calendar {
+public func globalCalendar() -> Calendar {
     return  Calendar(identifier: .gregorian)
 }
 public func noOfdaysInMonth(month : Int, year : Int)->Int?{

@@ -23,7 +23,13 @@ struct Day {
         weekday = aWeekday
         isLastDayInMonth = value
     }
-    
+    public func isEqualToDate( fromDate : Date)->Bool{
+        let components = globalCalendar().dateComponents([.day,.month,.year], from: fromDate)
+        return isEqualToDateComponents(components: components)
+    }
+    func isEqualToDateComponents( components : DateComponents)->Bool{
+        return self.day == components.day && self.month == components.month && self.year == components.year
+    }
 }
 
 struct Month {

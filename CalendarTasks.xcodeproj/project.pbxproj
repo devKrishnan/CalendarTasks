@@ -12,6 +12,7 @@
 		C43AF2451F1076DE00097B7D /* CalendarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43AF2441F1076DE00097B7D /* CalendarUtils.swift */; };
 		C43AF2461F1076DE00097B7D /* CalendarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43AF2441F1076DE00097B7D /* CalendarUtils.swift */; };
 		C43AF2481F1077DE00097B7D /* CalendarUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43AF2471F1077DE00097B7D /* CalendarUtilTests.swift */; };
+		C43AF24A1F11244500097B7D /* CalendarModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43AF2491F11244500097B7D /* CalendarModelTests.swift */; };
 		C4B310B91F0FB252003F148F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B310B81F0FB252003F148F /* AppDelegate.swift */; };
 		C4B310BB1F0FB252003F148F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B310BA1F0FB252003F148F /* ViewController.swift */; };
 		C4B310BE1F0FB252003F148F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B310BC1F0FB252003F148F /* Main.storyboard */; };
@@ -60,6 +61,7 @@
 		C43AF2411F105F4F00097B7D /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		C43AF2441F1076DE00097B7D /* CalendarUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarUtils.swift; sourceTree = "<group>"; };
 		C43AF2471F1077DE00097B7D /* CalendarUtilTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarUtilTests.swift; sourceTree = "<group>"; };
+		C43AF2491F11244500097B7D /* CalendarModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModelTests.swift; sourceTree = "<group>"; };
 		C4B310B51F0FB252003F148F /* CalendarTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B310B81F0FB252003F148F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4B310BA1F0FB252003F148F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				C4B310CD1F0FB252003F148F /* CalendarTasksTests.swift */,
 				C4B310CF1F0FB252003F148F /* Info.plist */,
 				C43AF2471F1077DE00097B7D /* CalendarUtilTests.swift */,
+				C43AF2491F11244500097B7D /* CalendarModelTests.swift */,
 			);
 			path = CalendarTasksTests;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C43AF24A1F11244500097B7D /* CalendarModelTests.swift in Sources */,
 				C4B310FC1F0FC9A5003F148F /* CalendarModel.swift in Sources */,
 				C43AF2481F1077DE00097B7D /* CalendarUtilTests.swift in Sources */,
 				C43AF2431F105F4F00097B7D /* DateUtils.swift in Sources */,

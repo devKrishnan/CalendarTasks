@@ -84,10 +84,13 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
         }
         if let day = currentDay {
             cell.dayLabel.text = String(day.day)
+            cell.today = day.isEqualToDate(fromDate: Date())
             
         }else{
             cell.dayLabel.text = nil
+            cell.today = false
         }
+        
         return cell
     }
     

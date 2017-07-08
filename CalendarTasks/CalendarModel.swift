@@ -42,7 +42,7 @@ struct Month {
         let calendar : Calendar =  globalCalendar()
     
         if let datefirstDay = dateFromComponents(year: ayear, month: aMonth, day: 1) {
-            firstDay = calendar.component(.weekday, from: datefirstDay)
+            firstDay = calendar.component(.weekday, from: datefirstDay - 1)
             dayList = []
             if let dayCount = noOfdaysInMonth(month: month, year: year){
                 for index in 0 ..< dayCount{
@@ -78,7 +78,7 @@ struct Year {
         let calendar : Calendar =  globalCalendar()
     
         if let datefirstDayInYear =  dateFromComponents(year: year, month: 1, day: 1) {
-            let firstDay = calendar.component(.weekday, from: datefirstDayInYear)
+            let firstDay = calendar.component(.weekday, from: datefirstDayInYear)-1
             var index = 0
             while index < CalendarConstants.totalMonths {
                 if let month : Month = Month(ayear: currentYear, aMonth: index + 1, aFirstDay: firstDay){

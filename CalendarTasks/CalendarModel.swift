@@ -13,6 +13,16 @@ struct Day {
     var year : Int
     var weekday : Int
     var isLastDayInMonth : Bool
+    init?(aDay : Int, aMonth : Int, aYear: Int, aWeekday : Int, isLastDayInMonth value: Bool) {
+        if ( aDay <= 0 || aMonth <= 0 || aYear <= 0)  {
+            return nil
+        }
+        day = aDay
+        month = aMonth
+        year = aYear
+        weekday = aWeekday
+        isLastDayInMonth = value
+    }
     
 }
 
@@ -23,6 +33,10 @@ struct Month {
     //THis is weekday. It is used to identify the beginning of a month
     var firstDay : Int
     init?(ayear: Int, aMonth:Int, aFirstDay : Int) {
+        if (aMonth <= 0 || ayear <= 0) {
+            return nil
+        }
+        
         month = aMonth
         year = ayear
         let calendar : Calendar =  globalCalendar()
@@ -32,8 +46,13 @@ struct Month {
             dayList = []
             if let dayCount = noOfdaysInMonth(month: month, year: year){
                 for index in 0 ..< dayCount{
-                    let day = Day(day: index + 1, month: month, year: year, weekday: (firstDay + (index % CalendarConstants.totalNumberOfDaysInWeek))%CalendarConstants.totalNumberOfDaysInWeek , isLastDayInMonth: index == dayCount-1 )
-                    dayList.append(day)
+                    
+                    if let day = Day(aDay: index + 1, aMonth: month, aYear: year, aWeekday: (firstDay + (index % CalendarConstants.totalNumberOfDaysInWeek))%CalendarConstants.totalNumberOfDaysInWeek , isLastDayInMonth: index == dayCount-1 ) {
+                        dayList.append(day)
+                    }
+                    else{
+                        return nil
+                    }
                 }
             }
         }
@@ -50,6 +69,9 @@ struct Year {
     var year : Int
     var monthList : [Month]
     init?(currentYear : Int) {
+        if currentYear <= 0 {
+            return nil
+        }
         year = currentYear
         monthList = []
         let calendar : Calendar =  globalCalendar()

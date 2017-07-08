@@ -8,11 +8,12 @@
 
 import XCTest
 @testable import CalendarTasks
-
+//@testable import
 class CalendarTasksTests: XCTestCase {
-    
+    var dateFormatter : DateFormatter = DateFormatter()
     override func setUp() {
         super.setUp()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -20,7 +21,24 @@ class CalendarTasksTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
-    
+    func testNumberOfDaysInMonth()  {
+        XCTAssert(28 == noOfdaysInMonth(month: 2, year: 2017), "No of days in February is 28")
+        XCTAssert(29 == noOfdaysInMonth(month: 2, year: 2020), "No of days in February in a leap year is 29")
+        XCTAssert(31 == noOfdaysInMonth(month: 5, year: 2023), "No of days in May 2023 is 31")
+        
+    }
+    func testDateComponentItFormsCorrectDate(){
+        let components = dateComponents(year: 2017, month: 1, day: 1)
+        let calendar = globalCalendar()
+        let date =  calendar.date(from: components)
+        XCTAssertNotNil(date, "Date can not be nil")
+        let dateString = "2017-1-1"
+        let dateToCompare = dateFormatter.date(from: dateString)
+        XCTAssertNotNil(dateToCompare, "Date from dateformatter can not be nil")
+        XCTAssertEqualWithAccuracy(date!.timeIntervalSinceReferenceDate, dateToCompare!.timeIntervalSinceReferenceDate, accuracy: 0.00001, "Date created using date components is not equal to the original date")
+        
+        
+    }
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

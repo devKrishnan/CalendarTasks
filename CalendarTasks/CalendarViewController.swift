@@ -11,6 +11,7 @@ import UIKit
 class CalendarViewController: UIViewController {
     var dataSource : CalendarDataSource!
     var years : [Year] = []
+    @IBOutlet weak var calendarHeaderView: UIView!
     let dateFormatter  = DateFormatter()
     var onMonthYearUpdate : ( (_ monthText: String)->Void)?
     @IBOutlet weak var collectionView: UICollectionView!
@@ -21,6 +22,8 @@ class CalendarViewController: UIViewController {
         collectionView.dataSource = dataSource
         collectionView.delegate = self
         collectionView.reloadData()
+        dataSource.calendarHeaderView = calendarHeaderView
+        dataSource.addDaysInHeader(collectionView: collectionView)
         // Do any additional setup after loading the view.
     }
 

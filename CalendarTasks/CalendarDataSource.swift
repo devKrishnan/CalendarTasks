@@ -12,6 +12,25 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
     var  years : [Year] = []
     var ignoreFirstRowForNextSection : Bool = false
     let dateFormatter = DateFormatter()
+    var calendarHeaderView : UIView?
+    public func addDaysInHeader(collectionView : UICollectionView){
+        var originX : CGFloat = 0.0
+        if let header =  calendarHeaderView{
+            let size = CGSize(width: header.frame.size.width / CGFloat(CalendarConstants.totalNumberOfDaysInWeek), height: 43.0)
+            let symbols = dateFormatter.shortWeekdaySymbols
+            for i in 0 ..< CalendarConstants.totalNumberOfDaysInWeek{
+                let label = UILabel(frame: CGRect.zero)
+                label.textAlignment = NSTextAlignment.center
+                label.frame.size = size
+                label.frame.origin =  CGPoint(x: originX, y: 0)
+                originX = originX + size.width+5
+                label.text = symbols?[i]
+                calendarHeaderView?.addSubview(label)
+            }
+
+        }
+        
+    }
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int{
         let yearIndex = section / CalendarConstants.totalMonths
         let monthIndex = section % CalendarConstants.totalMonths

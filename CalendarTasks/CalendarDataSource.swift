@@ -40,26 +40,14 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell : DayCell = collectionView.dequeueReusableCell(withReuseIdentifier: "DayCell", for: indexPath) as! DayCell
         cell.monthLabel.text = nil
-        let yearIndex = indexPath.section / CalendarConstants.totalMonths
-        let monthIndex = indexPath.section % CalendarConstants.totalMonths
+        let  (dayIndex, monthIndex, yearIndex, nextMonthIndex, nextYearIndex) = calendarIndex(indexPath: indexPath)
+    
         let year = years[yearIndex]
         let month = year.monthList[monthIndex]
-        var dayIndex = 0
-        if  indexPath.section == 0 {
-            dayIndex = indexPath.row - month.firstDay
-        }else{
-            if (month.firstDay == 0) {
-                dayIndex = indexPath.row;
-            }else{
-                dayIndex = (CalendarConstants.totalNumberOfDaysInWeek - 1)  - month.firstDay + 1 + indexPath.row;
-            }
-        }
-        var nextMonthIndex = monthIndex + 1
-        var nextYear : Year = year
-        if ( monthIndex >= (CalendarConstants.totalMonths-1) && ((yearIndex + 1) < years.count) )  {
-            nextYear = years[yearIndex + 1]
-            nextMonthIndex = 0
-        }
+        
+        
+        var nextYear : Year = years[nextYearIndex]
+       
         var currentDay : Day?
         if (dayIndex >= 0 && dayIndex < month.dayList.count)
         {
@@ -86,12 +74,38 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
         return cell
     }
     
+    func calendarIndex(indexPath : IndexPath) -> (dayIndex : Int, monthIndex : Int, yearIndex : Int, nextMonthIndex : Int, nextYearIndex : Int) {
+        let yearIndex = indexPath.section / CalendarConstants.totalMonths
+        let monthIndex = indexPath.section % CalendarConstants.totalMonths
+        let year = years[yearIndex]
+        let month = year.monthList[monthIndex]
+        var dayIndex = 0
+        if  indexPath.section == 0 {
+            dayIndex = indexPath.row - month.firstDay
+        }else{
+            if (month.firstDay == 0) {
+                dayIndex = indexPath.row;
+            }else{
+                dayIndex = (CalendarConstants.totalNumberOfDaysInWeek - 1)  - month.firstDay + 1 + indexPath.row;
+            }
+        }
+        var nextMonthIndex = monthIndex + 1
+        
+        if ( monthIndex >= (CalendarConstants.totalMonths-1) && ((yearIndex + 1) < years.count) )  {
+            nextMonthIndex = 0
+            return (dayIndex, monthIndex, yearIndex, nextMonthIndex, yearIndex + 1 )
+        }
+        else{
+            return (dayIndex, monthIndex, yearIndex, nextMonthIndex, yearIndex )
+        }
+    }
+    
     
     @available(iOS 6.0, *)
     public func numberOfSections(in collectionView: UICollectionView) -> Int{
         return  years.count * CalendarConstants.totalMonths
     }
-   
+    
    
 
 }

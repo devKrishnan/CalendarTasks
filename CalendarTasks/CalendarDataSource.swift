@@ -7,9 +7,25 @@
 //
 
 import UIKit
+//We are displaying days of a  month in previous month if there are empty rows
+//Section 0 - January
+//J1    2  3   4   5   6   7
+//..........................
+//..........................
+//22  23  24  25  26  27  28
+//29  30  31  F1  2    3   4
+
+//Section 1 - February - Febraury has begun in the previous section itself
+//F5  6   7   8   9    10  11
+//..........................
+//..........................
+//19  20  21  22  23   24  25
+//26  27  28  M1  2     3  4
+//Section 2 - March -
 
 class CalendarDataSource: NSObject, UICollectionViewDataSource {
     var  years : [Year] = []
+    //Since we are displaying the next month's days in prev month, we use this bool value to determine if the firstRow has to be ignored or not
     var ignoreFirstRowForNextSection : Bool = false
     let dateFormatter = DateFormatter()
     var calendarHeaderView : UIStackView?
@@ -93,7 +109,7 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
         
         return cell
     }
-    
+    //The return value contains the current month and year index together with nextMonth index and next year index for cases where next month day is displayed in the current month's empty cells
     func calendarIndex(indexPath : IndexPath) -> (dayIndex : Int, monthIndex : Int, yearIndex : Int, nextMonthIndex : Int, nextYearIndex : Int) {
         let yearIndex = indexPath.section / CalendarConstants.totalMonths
         let monthIndex = indexPath.section % CalendarConstants.totalMonths

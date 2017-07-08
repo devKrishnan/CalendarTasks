@@ -15,7 +15,15 @@ class DayCell: UICollectionViewCell {
     var borderView : UIView!
     var today: Bool = false{
         didSet{
-            self.setNeedsDisplay()
+            if today {
+                self.backgroundColor = UIColor.blue.withAlphaComponent(0.2)
+                dayLabel.textColor = UIColor.blue
+                monthLabel.textColor = UIColor.blue
+            }else{
+                self.backgroundColor = UIColor.white
+                dayLabel.textColor = UIColor.black
+                monthLabel.textColor = UIColor.black
+            }
         }
     }
     override func awakeFromNib() {
@@ -30,12 +38,5 @@ class DayCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
             borderView.frame =  CGRect(x: 0, y: 0, width: self.frame.size.width, height: 1)
-    }
-    override func draw(_ rect: CGRect) {
-        if today {
-            let path = UIBezierPath(ovalIn: rect)
-            UIColor.green.setFill()
-            path.fill()
-        }
     }
 }

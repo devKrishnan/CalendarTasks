@@ -66,7 +66,7 @@ struct Month {
 }
 
 struct Year {
-    var year : Int
+    public var year : Int
     var monthList : [Month]
     var totalDays : Int = 0
     init?(currentYear : Int) {

@@ -11,4 +11,5 @@ import Foundation
 struct CalendarConstants {
     static let totalNumberOfDaysInWeek = 7
     static let totalMonths =  12
+    static let invalidIndex = -1
 }

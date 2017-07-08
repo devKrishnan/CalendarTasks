@@ -13,6 +13,23 @@ class DayCell: UICollectionViewCell {
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
     var borderView : UIView!
+    @IBOutlet weak var dayLabelTopConstraint: NSLayoutConstraint!
+    override var isSelected: Bool{
+        didSet {
+            //It matters to show or hide month only when month label contains text
+            if let text = monthLabel.text, !text.isEmpty {
+                if isSelected {
+                    hideMonth()
+                }else{
+                    showMonth()
+                }
+            }
+            
+        }
+    }
+    override func prepareForReuse() {
+        showMonth()
+    }
     var today: Bool = false{
         didSet{
             if today {
@@ -25,6 +42,18 @@ class DayCell: UICollectionViewCell {
                 monthLabel.textColor = UIColor.black
             }
         }
+    }
+    func showMonth() -> Void {
+        dayLabelTopConstraint.constant = 10
+        self.layoutIfNeeded()
+        self.monthLabel.isHidden = false
+    }
+    func hideMonth() -> Void {
+        
+        self.monthLabel.isHidden = true
+        dayLabelTopConstraint.constant = 4
+        self.layoutIfNeeded()
+        
     }
     override func awakeFromNib() {
         var frame = self.bounds
@@ -39,4 +68,5 @@ class DayCell: UICollectionViewCell {
         super.layoutSubviews()
             borderView.frame =  CGRect(x: 0, y: 0, width: self.frame.size.width, height: 1)
     }
+    
 }

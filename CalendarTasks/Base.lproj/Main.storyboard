@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -78,31 +79,42 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0M-i7-JTg">
-                                                    <rect key="frame" x="0.0" y="22" width="50" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXs-f1-ujQ">
+                                                    <rect key="frame" x="0.0" y="4" width="50" height="12"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="12" id="stS-jt-FdB"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXs-f1-ujQ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="22"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0M-i7-JTg">
+                                                    <rect key="frame" x="0.0" y="18" width="50" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="N0M-i7-JTg" firstAttribute="top" secondItem="PjB-GL-S5d" secondAttribute="topMargin" constant="10" id="5NO-25-Jtl"/>
+                                            <constraint firstItem="ZXs-f1-ujQ" firstAttribute="top" secondItem="PjB-GL-S5d" secondAttribute="topMargin" constant="-4" id="Aff-Kk-sGT"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="ZXs-f1-ujQ" secondAttribute="trailing" constant="-8" id="JEs-8y-jrB"/>
+                                            <constraint firstItem="ZXs-f1-ujQ" firstAttribute="leading" secondItem="PjB-GL-S5d" secondAttribute="leadingMargin" constant="-8" id="JXN-na-QoO"/>
+                                            <constraint firstItem="N0M-i7-JTg" firstAttribute="width" secondItem="PjB-GL-S5d" secondAttribute="width" id="PgX-IS-07d"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="N0M-i7-JTg" secondAttribute="trailing" constant="-8" id="SPk-Md-o9q"/>
+                                            <constraint firstItem="N0M-i7-JTg" firstAttribute="leading" secondItem="PjB-GL-S5d" secondAttribute="leadingMargin" constant="-8" id="iiV-VG-6Sg"/>
+                                            <constraint firstItem="ZXs-f1-ujQ" firstAttribute="width" secondItem="PjB-GL-S5d" secondAttribute="width" id="xXV-Oy-atD"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="dayLabel" destination="N0M-i7-JTg" id="lyQ-3W-yf6"/>
+                                            <outlet property="dayLabelTopConstraint" destination="5NO-25-Jtl" id="U85-bn-yYV"/>
                                             <outlet property="monthLabel" destination="ZXs-f1-ujQ" id="RVP-Re-kaA"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.2470588235" blue="0.42352941179999998" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="pK1-WC-Y8i" firstAttribute="top" secondItem="6Qe-dC-XWv" secondAttribute="bottom" constant="44" id="4eP-ae-rPJ"/>
                             <constraint firstItem="G9g-EV-Ehs" firstAttribute="width" secondItem="w6J-pe-3bq" secondAttribute="width" id="SLm-9N-tI2"/>

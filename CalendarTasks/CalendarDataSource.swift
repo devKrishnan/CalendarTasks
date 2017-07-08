@@ -87,6 +87,9 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
             currentDay = month.dayList[dayIndex]
             if (dayIndex == 0) {
                 cell.monthLabel.text = dateFormatter.shortMonthSymbols[monthIndex]
+                cell.showMonth()
+            }else{
+                cell.hideMonth()
             }
             
         }else if (dayIndex >= 0 && dayIndex >= month.dayList.count && nextMonthIndex < nextYear.monthList.count){
@@ -94,6 +97,9 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
             let index = dayIndex-month.dayList.count
             if (index == 0) {
                 cell.monthLabel.text = dateFormatter.shortMonthSymbols[nextMonthIndex]
+                cell.showMonth()
+            }else{
+                cell.hideMonth()
             }
             currentDay = nextMonth.dayList[index]
             

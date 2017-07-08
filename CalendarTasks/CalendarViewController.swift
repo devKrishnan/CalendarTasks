@@ -68,5 +68,37 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+       let  (dayIndex, monthIndex, yearIndex, nextMonthIndex, nextYearIndex) =  dataSource.calendarIndex(indexPath: indexPath)
+        
+        let year = years[yearIndex]
+        let month = year.monthList[monthIndex]
+        
+        
+        var nextYear : Year = years[nextYearIndex]
+        
+        var currentDay : Day?
+        if (dayIndex >= 0 && dayIndex < month.dayList.count)
+        {
+            currentDay = month.dayList[dayIndex]
+            if (dayIndex == 0) {
+                print("First day in a month")
+            }
+            
+        }else if (dayIndex >= 0 && dayIndex >= month.dayList.count && nextMonthIndex < nextYear.monthList.count){
+            let nextMonth = nextYear.monthList[nextMonthIndex]
+            let index = dayIndex-month.dayList.count
+            if (dayIndex == 0) {
+                print("First day in a month")
+            }
+            currentDay = nextMonth.dayList[index]
+            
+        }
+        if let callback = self.onMonthYearUpdate, let year =  currentDay?.year, let month = currentDay?.month {
+            callback(dateFormatter.shortMonthSymbols[month-1] + " " + String(year ))
+        }
+        //let
+    }
 }
 

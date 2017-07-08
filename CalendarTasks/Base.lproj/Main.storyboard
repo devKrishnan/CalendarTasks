@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -79,26 +78,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0M-i7-JTg">
-                                                    <rect key="frame" x="9" y="22" width="30" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Day" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0M-i7-JTg">
+                                                    <rect key="frame" x="0.0" y="22" width="50" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXs-f1-ujQ">
-                                                    <rect key="frame" x="4" y="0.0" width="38" height="22"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXs-f1-ujQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="22"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
-                                        <constraints>
-                                            <constraint firstItem="ZXs-f1-ujQ" firstAttribute="trailing" secondItem="PjB-GL-S5d" secondAttribute="trailingMargin" id="5DK-4h-cq8"/>
-                                            <constraint firstItem="N0M-i7-JTg" firstAttribute="top" secondItem="ZXs-f1-ujQ" secondAttribute="bottom" id="pMc-JJ-9hh"/>
-                                            <constraint firstItem="ZXs-f1-ujQ" firstAttribute="top" secondItem="PjB-GL-S5d" secondAttribute="top" id="qIf-dN-2kz"/>
-                                            <constraint firstItem="N0M-i7-JTg" firstAttribute="leading" secondItem="PjB-GL-S5d" secondAttribute="leadingMargin" constant="1" id="yw2-Kw-PYW"/>
-                                        </constraints>
                                         <connections>
                                             <outlet property="dayLabel" destination="N0M-i7-JTg" id="lyQ-3W-yf6"/>
                                             <outlet property="monthLabel" destination="ZXs-f1-ujQ" id="RVP-Re-kaA"/>

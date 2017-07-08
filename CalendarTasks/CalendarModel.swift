@@ -68,6 +68,7 @@ struct Month {
 struct Year {
     var year : Int
     var monthList : [Month]
+    var totalDays : Int = 0
     init?(currentYear : Int) {
         if currentYear <= 0 {
             return nil
@@ -83,6 +84,7 @@ struct Year {
                 if let month : Month = Month(ayear: currentYear, aMonth: index + 1, aFirstDay: firstDay){
                     monthList.append(month)
                     index = index + 1
+                    totalDays += month.dayList.count
                 }
                 else{
                     return nil

@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="pK1-WC-Y8i">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="330"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pGI-0a-gH3">
                                     <size key="itemSize" width="50" height="44"/>
@@ -102,7 +102,7 @@
                             <constraint firstItem="pK1-WC-Y8i" firstAttribute="top" secondItem="6Qe-dC-XWv" secondAttribute="bottom" id="4eP-ae-rPJ"/>
                             <constraint firstItem="pK1-WC-Y8i" firstAttribute="leading" secondItem="w6J-pe-3bq" secondAttribute="leadingMargin" constant="-16" id="CU1-tY-Bdd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pK1-WC-Y8i" secondAttribute="trailing" constant="-16" id="YaJ-eA-ZQ1"/>
-                            <constraint firstItem="vJt-Md-WDv" firstAttribute="top" secondItem="pK1-WC-Y8i" secondAttribute="bottom" id="x42-HK-iJR"/>
+                            <constraint firstItem="vJt-Md-WDv" firstAttribute="top" secondItem="pK1-WC-Y8i" secondAttribute="bottom" constant="30" id="x42-HK-iJR"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

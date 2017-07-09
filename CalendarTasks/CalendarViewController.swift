@@ -11,6 +11,7 @@ import UIKit
 class CalendarViewController: UIViewController {
     var dataSource : CalendarDataSource!
     var years : [Year] = []
+    var selectedIndexPath : NSIndexPath? = nil
     @IBOutlet weak var calendarHeaderView: UIStackView!
     let dateFormatter  = DateFormatter()
     var onMonthYearUpdate : ( (_ monthText: String)->Void)?
@@ -98,6 +99,16 @@ extension CalendarViewController: UICollectionViewDelegate, UICollectionViewDele
         if let callback = self.onMonthYearUpdate, let year =  currentDay?.year, let month = currentDay?.month {
             callback(dateFormatter.shortMonthSymbols[month-1] + " " + String(year ))
         }
+        var cell : DayCell
+        if let _ = selectedIndexPath {
+             cell = collectionView.cellForItem(at: selectedIndexPath! as IndexPath) as! DayCell
+            cell.hideSelectionLayer()
+        }
+       
+        cell  = collectionView.cellForItem(at: indexPath as IndexPath) as! DayCell
+        cell.addSelectionLayer()
+        dataSource.selectedIndexPath = indexPath as NSIndexPath
+        self.selectedIndexPath = indexPath as NSIndexPath
         //let
     }
 }

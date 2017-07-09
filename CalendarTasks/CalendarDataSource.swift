@@ -29,6 +29,7 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
     var ignoreFirstRowForNextSection : Bool = false
     let dateFormatter = DateFormatter()
     var calendarHeaderView : UIStackView?
+    var selectedIndexPath : NSIndexPath? = nil
     public func addDaysInHeader(collectionView : UICollectionView){
         if let header =  calendarHeaderView{
             let size = CGSize(width: header.frame.size.width / CGFloat(CalendarConstants.totalNumberOfDaysInWeek), height: 43.0)
@@ -71,7 +72,6 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
     @available(iOS 6.0, *)
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell{
         let cell : DayCell = collectionView.dequeueReusableCell(withReuseIdentifier: "DayCell", for: indexPath) as! DayCell
-
         cell.monthLabel.text = ""
         let  (dayIndex, monthIndex, yearIndex, nextMonthIndex, nextYearIndex) = calendarIndex(indexPath: indexPath)
     
@@ -111,6 +111,11 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
         }else{
             cell.dayLabel.text = nil
             cell.today = false
+        }
+        if self.selectedIndexPath?.compare(indexPath) == .orderedSame {
+            cell.addSelectionLayer()
+        }else{
+            cell.hideSelectionLayer()
         }
         
         return cell

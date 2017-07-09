@@ -14,9 +14,11 @@ class DayCell: UICollectionViewCell {
     @IBOutlet weak var monthLabel: UILabel!
     var borderView : UIView!
     @IBOutlet weak var dayLabelTopConstraint: NSLayoutConstraint!
+    var selectedStateLayer : CAShapeLayer?
     override var isSelected: Bool{
         didSet {
             //It matters to show or hide month only when month label contains text
+            
             if let text = monthLabel.text, !text.isEmpty {
                 if isSelected {
                     hideMonth()
@@ -24,11 +26,13 @@ class DayCell: UICollectionViewCell {
                     showMonth()
                 }
             }
+            //self.handleSelection()
             
         }
     }
     override func prepareForReuse() {
         showMonth()
+        hideSelectionLayer()
     }
     var today: Bool = false{
         didSet{
@@ -41,6 +45,7 @@ class DayCell: UICollectionViewCell {
                 dayLabel.textColor = UIColor.black
                 monthLabel.textColor = UIColor.black
             }
+            
         }
     }
     func showMonth() -> Void {
@@ -55,6 +60,7 @@ class DayCell: UICollectionViewCell {
         self.layoutIfNeeded()
         
     }
+    
     override func awakeFromNib() {
         var frame = self.bounds
         frame.origin.y = self.bounds.height - 1
@@ -68,5 +74,21 @@ class DayCell: UICollectionViewCell {
         super.layoutSubviews()
             borderView.frame =  CGRect(x: 0, y: 0, width: self.frame.size.width, height: 1)
     }
+    func hideSelectionLayer(){
+        self.selectedStateLayer?.removeFromSuperlayer()
+        self.selectedStateLayer = nil
+    }
+    func addSelectionLayer(){
+
+            let minimumDimension = self.bounds.size.width > self.bounds.size.height ?  self.bounds.size.height : self.bounds.size.width
+            let originX : CGFloat = self.bounds.size.width/(self.bounds.size.width > self.bounds.size.height ? 5 : 7)
+            let originY : CGFloat = self.bounds.size.height/7
+            let origin = originX < originY ? originX  : originY
+            let bezierPath = UIBezierPath(ovalIn: CGRect(x: originX, y: originY, width: minimumDimension-2*origin, height: minimumDimension-2*origin))
+            self.selectedStateLayer = CAShapeLayer()
+            self.selectedStateLayer?.path = bezierPath.cgPath
+            self.selectedStateLayer?.fillColor = UIColor.green.cgColor
+            self.layer.insertSublayer(selectedStateLayer!, at: 0)
     
+    }
 }

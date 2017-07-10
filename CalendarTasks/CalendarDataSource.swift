@@ -114,8 +114,10 @@ class CalendarDataSource: NSObject, UICollectionViewDataSource {
         }
         if self.selectedIndexPath?.compare(indexPath) == .orderedSame {
             cell.addSelectionLayer()
+            cell.isSelected = true
         }else{
             cell.hideSelectionLayer()
+            cell.isSelected = false
         }
         
         return cell

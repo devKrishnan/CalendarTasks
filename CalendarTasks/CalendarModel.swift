@@ -13,6 +13,7 @@ struct Day {
     var year : Int
     var weekday : Int
     var isLastDayInMonth : Bool
+    var tasks : [Task]?
     init?(aDay : Int, aMonth : Int, aYear: Int, aWeekday : Int, isLastDayInMonth value: Bool) {
         if ( aDay <= 0 || aMonth <= 0 || aYear <= 0)  {
             return nil
@@ -103,4 +104,13 @@ struct Year {
         
     }
 }
-
+//Not considering the repated events.
+//Will not show the status of the invites
+struct Task {
+    var startTime : Date?
+    var endTime : Date?
+    var name: String?
+    var description: String?
+    var place : String?
+    var people : [String]?
+}

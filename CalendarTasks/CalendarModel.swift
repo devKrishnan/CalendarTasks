@@ -13,7 +13,7 @@ struct Day {
     var year : Int
     var weekday : Int
     var isLastDayInMonth : Bool
-    var tasks : [Task]?
+    var tasks : [Event]?
     init?(aDay : Int, aMonth : Int, aYear: Int, aWeekday : Int, isLastDayInMonth value: Bool) {
         if ( aDay <= 0 || aMonth <= 0 || aYear <= 0)  {
             return nil
@@ -33,10 +33,11 @@ struct Day {
     }
 }
 
-struct Month {
+struct Month :Equatable {
     var month : Int
     var dayList : [Day]
     var year : Int
+    var totalDays : Int = 0
     //THis is weekday. It is used to identify the beginning of a month
     var firstDay : Int
     init?(ayear: Int, aMonth:Int, aFirstDay : Int) {
@@ -52,6 +53,7 @@ struct Month {
             firstDay = calendar.component(.weekday, from: datefirstDay)-1
             dayList = []
             if let dayCount = noOfdaysInMonth(month: month, year: year){
+                totalDays = dayCount
                 for index in 0 ..< dayCount{
                     
                     if let day = Day(aDay: index + 1, aMonth: month, aYear: year, aWeekday: (firstDay + (index % CalendarConstants.totalNumberOfDaysInWeek))%CalendarConstants.totalNumberOfDaysInWeek , isLastDayInMonth: index == dayCount-1 ) {
@@ -69,6 +71,9 @@ struct Month {
         
         
     }
+    public static func ==(lhs: Month, rhs: Month) -> Bool{
+        return lhs.year == rhs.year && lhs.month == rhs.month
+    }
 
 }
 
@@ -76,6 +81,15 @@ struct Year {
     public var year : Int
     var monthList : [Month]
     var totalDays : Int = 0
+    func nextMonth(currentMonth : Month) -> Month? {
+        if currentMonth.month == CalendarConstants.totalMonths {
+            return nil
+        }
+        return monthList[currentMonth.month]
+    }
+//    isLeapYear ()->Bool{
+//    
+//    }
     init?(currentYear : Int) {
         if currentYear <= 0 {
             return nil
@@ -104,13 +118,18 @@ struct Year {
         
     }
 }
+enum EventType {
+    case birthday, meeting, skype, holiday, telephonic_discussion, unknown
+}
+
 //Not considering the repated events.
 //Will not show the status of the invites
-struct Task {
+struct Event {
     var startTime : Date?
     var endTime : Date?
     var name: String?
     var description: String?
     var place : String?
     var people : [String]?
+    var type : EventType?
 }

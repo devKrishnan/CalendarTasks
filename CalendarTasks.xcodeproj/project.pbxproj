@@ -13,6 +13,15 @@
 		C43AF2461F1076DE00097B7D /* CalendarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43AF2441F1076DE00097B7D /* CalendarUtils.swift */; };
 		C43AF2481F1077DE00097B7D /* CalendarUtilTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43AF2471F1077DE00097B7D /* CalendarUtilTests.swift */; };
 		C43AF24A1F11244500097B7D /* CalendarModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43AF2491F11244500097B7D /* CalendarModelTests.swift */; };
+		C45E5A401F1361EE0049DCBD /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E5A3F1F1361EE0049DCBD /* EventCell.swift */; };
+		C45E5A411F1361EE0049DCBD /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E5A3F1F1361EE0049DCBD /* EventCell.swift */; };
+		C45E5A421F1361EE0049DCBD /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E5A3F1F1361EE0049DCBD /* EventCell.swift */; };
+		C45E5A451F13728A0049DCBD /* DayHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45E5A441F13728A0049DCBD /* DayHeaderView.xib */; };
+		C45E5A461F13728A0049DCBD /* DayHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45E5A441F13728A0049DCBD /* DayHeaderView.xib */; };
+		C45E5A471F13728A0049DCBD /* DayHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C45E5A441F13728A0049DCBD /* DayHeaderView.xib */; };
+		C45E5A491F1372D00049DCBD /* DayHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E5A481F1372D00049DCBD /* DayHeaderView.swift */; };
+		C45E5A4A1F1372D00049DCBD /* DayHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E5A481F1372D00049DCBD /* DayHeaderView.swift */; };
+		C45E5A4B1F1372D00049DCBD /* DayHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45E5A481F1372D00049DCBD /* DayHeaderView.swift */; };
 		C4B310B91F0FB252003F148F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B310B81F0FB252003F148F /* AppDelegate.swift */; };
 		C4B310BB1F0FB252003F148F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B310BA1F0FB252003F148F /* ViewController.swift */; };
 		C4B310BE1F0FB252003F148F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4B310BC1F0FB252003F148F /* Main.storyboard */; };
@@ -62,6 +71,9 @@
 		C43AF2441F1076DE00097B7D /* CalendarUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarUtils.swift; sourceTree = "<group>"; };
 		C43AF2471F1077DE00097B7D /* CalendarUtilTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarUtilTests.swift; sourceTree = "<group>"; };
 		C43AF2491F11244500097B7D /* CalendarModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarModelTests.swift; sourceTree = "<group>"; };
+		C45E5A3F1F1361EE0049DCBD /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		C45E5A441F13728A0049DCBD /* DayHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayHeaderView.xib; sourceTree = "<group>"; };
+		C45E5A481F1372D00049DCBD /* DayHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayHeaderView.swift; sourceTree = "<group>"; };
 		C4B310B51F0FB252003F148F /* CalendarTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalendarTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4B310B81F0FB252003F148F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4B310BA1F0FB252003F148F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +129,24 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		C45E5A3E1F1361BD0049DCBD /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C45E5A3F1F1361EE0049DCBD /* EventCell.swift */,
+			);
+			name = Cells;
+			path = CalendarTasks/Cells;
+			sourceTree = SOURCE_ROOT;
+		};
+		C45E5A431F1372760049DCBD /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				C45E5A441F13728A0049DCBD /* DayHeaderView.xib */,
+				C45E5A481F1372D00049DCBD /* DayHeaderView.swift */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		C4B310AC1F0FB252003F148F = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +170,8 @@
 		C4B310B71F0FB252003F148F /* CalendarTasks */ = {
 			isa = PBXGroup;
 			children = (
+				C45E5A431F1372760049DCBD /* Header */,
+				C45E5A3E1F1361BD0049DCBD /* Cells */,
 				C43AF2401F105F4000097B7D /* Utility */,
 				C4B310B81F0FB252003F148F /* AppDelegate.swift */,
 				C4B310BA1F0FB252003F148F /* ViewController.swift */,
@@ -284,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C45E5A451F13728A0049DCBD /* DayHeaderView.xib in Resources */,
 				C4B310C31F0FB252003F148F /* LaunchScreen.storyboard in Resources */,
 				C4B310C01F0FB252003F148F /* Assets.xcassets in Resources */,
 				C4B310BE1F0FB252003F148F /* Main.storyboard in Resources */,
@@ -294,6 +327,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C45E5A461F13728A0049DCBD /* DayHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C45E5A471F13728A0049DCBD /* DayHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +352,9 @@
 				C4B310BB1F0FB252003F148F /* ViewController.swift in Sources */,
 				C43AF2421F105F4F00097B7D /* DateUtils.swift in Sources */,
 				C4B310F71F0FBC8E003F148F /* DayCell.swift in Sources */,
+				C45E5A401F1361EE0049DCBD /* EventCell.swift in Sources */,
 				C4B310E91F0FB373003F148F /* TasksTableViewController.swift in Sources */,
+				C45E5A491F1372D00049DCBD /* DayHeaderView.swift in Sources */,
 				C43AF2451F1076DE00097B7D /* CalendarUtils.swift in Sources */,
 				C4B310B91F0FB252003F148F /* AppDelegate.swift in Sources */,
 				C4B310F31F0FBC05003F148F /* CalendarConstants.swift in Sources */,
@@ -332,11 +369,13 @@
 				C4B310FC1F0FC9A5003F148F /* CalendarModel.swift in Sources */,
 				C43AF2481F1077DE00097B7D /* CalendarUtilTests.swift in Sources */,
 				C43AF2431F105F4F00097B7D /* DateUtils.swift in Sources */,
+				C45E5A411F1361EE0049DCBD /* EventCell.swift in Sources */,
 				C4B310F01F0FBAC8003F148F /* CalendarDataSource.swift in Sources */,
 				C43AF2461F1076DE00097B7D /* CalendarUtils.swift in Sources */,
 				C4B310EC1F0FB377003F148F /* CalendarViewController.swift in Sources */,
 				C4B310EA1F0FB373003F148F /* TasksTableViewController.swift in Sources */,
 				C4B310F41F0FBC05003F148F /* CalendarConstants.swift in Sources */,
+				C45E5A4A1F1372D00049DCBD /* DayHeaderView.swift in Sources */,
 				C4B310F81F0FBC8E003F148F /* DayCell.swift in Sources */,
 				C4B310CE1F0FB252003F148F /* CalendarTasksTests.swift in Sources */,
 			);
@@ -350,9 +389,11 @@
 				C4B310F11F0FBAC8003F148F /* CalendarDataSource.swift in Sources */,
 				C4B310ED1F0FB377003F148F /* CalendarViewController.swift in Sources */,
 				C4B310EB1F0FB373003F148F /* TasksTableViewController.swift in Sources */,
+				C45E5A421F1361EE0049DCBD /* EventCell.swift in Sources */,
 				C4B310F51F0FBC05003F148F /* CalendarConstants.swift in Sources */,
 				C4B310F91F0FBC8E003F148F /* DayCell.swift in Sources */,
 				C4B310D91F0FB252003F148F /* CalendarTasksUITests.swift in Sources */,
+				C45E5A4B1F1372D00049DCBD /* DayHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

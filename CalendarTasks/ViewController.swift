@@ -31,11 +31,12 @@ class ViewController: UIViewController {
         calendar.onMonthYearUpdate = {(text: String) -> Void in
             self.navigationItem.title = text
         }
-        let tasks = storyboard.instantiateViewController(withIdentifier: "TasksTableViewController")
+        let tasks : TasksTableViewController = storyboard.instantiateViewController(withIdentifier: "TasksTableViewController") as! TasksTableViewController
         self.addChildViewController(calendar)
         calendar.view.frame = self.frameForCalendarController();
         self.view.addSubview(calendar.view)
         calendar.didMove(toParentViewController: self)
+        tasks.currentYear = yearList.first
         self.addChildViewController(tasks)
         tasks.view.frame = self.frameForTaskController();
         self.view.addSubview(tasks.view)

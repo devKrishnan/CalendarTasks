@@ -31,7 +31,37 @@ class CalendarUtilTests: XCTestCase {
             beginYear = beginYear + 1
         }
     }
-    
+    func testInvalidDayInMonthCreated() {
+        //Day index begins from 0
+        let day = 365
+        let year = Year(currentYear: 2017)
+        let (dayIndex, month) = dayInMonth(fromdayIndex: day, inYear: year!)
+        XCTAssertNil(month, "366 is not a valid day")
+        XCTAssertNil(dayIndex, "366 is not a valid day")
+        
+    }
+    func testValidDayInMonthCreated() {
+        //Day index begins from 0
+        let day = 364
+        
+        if let year = Year(currentYear: 2017) {
+            let (dayIndex, month) = dayInMonth(fromdayIndex: day, inYear: year)
+            XCTAssertNotNil(month, "365 is  a valid day")
+            XCTAssertNotNil(dayIndex, "365 is  a valid day")
+            
+            XCTAssertNotNil(month, "365 is  a valid day")
+            XCTAssertNotNil(dayIndex, "365 is  a valid day")
+            let decMonth = year.monthList.last
+            XCTAssertEqual(month, decMonth, "The day Index refers to 31  December month")
+            XCTAssertEqual(30 , dayIndex, "The day Index refers to 31  December month")
+            
+            XCTAssertNotEqual(31 , dayIndex, "The day Index refers to 31  December month")
+        }else{
+            XCTAssertTrue(false)
+        }
+       
+        
+    }
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

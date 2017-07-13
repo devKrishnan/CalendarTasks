@@ -13,7 +13,6 @@ class TasksTableViewController: UITableViewController {
     
     var currentYear : Year?
     let dateFormatter = DateFormatter()
-    var currentMonth : Month? = nil
     var dayCountUntilCurrentMonth = 0
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,32 +44,18 @@ class TasksTableViewController: UITableViewController {
     }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if let year = currentYear {
-            if currentMonth == nil{
-                currentMonth = year.monthList.first
-                dayCountUntilCurrentMonth = (currentMonth?.totalDays)!
-            }else if section == dayCountUntilCurrentMonth{
-                currentMonth = year.nextMonth(currentMonth: currentMonth!)
-                if let month = currentMonth  {
-                    dayCountUntilCurrentMonth = dayCountUntilCurrentMonth + month.totalDays
-                }
+            
+            let (index, month) = dayInMonth(fromdayIndex: section, inYear: year)
+            if let dayIndex = index, let currentMonth = month  {
+                let weekDaysTitle = dateFormatter.weekdaySymbols[ (dayIndex + currentMonth.firstDay) % 7 ]
+                let monthName = dateFormatter.monthSymbols[currentMonth.month-1]
+                let day  = currentMonth.dayList[dayIndex]
+                    let title = weekDaysTitle + " " + String(describing: day.day) + " " + monthName
+                    return title
                 
             }else{
-                
-            }
-            let totalDays = (currentMonth?.totalDays)!
-            let dayIndex = section - dayCountUntilCurrentMonth + totalDays
-            
-            let weekDaysTitle = dateFormatter.weekdaySymbols[ (dayIndex + (currentMonth?.firstDay)!) % 7 ]
-            let monthName = dateFormatter.monthSymbols[(currentMonth?.month)!-1]
-            if let day  = currentMonth?.dayList[dayIndex]{
-                let title = weekDaysTitle + " " + String(describing: day.day) + " " + monthName
-                return title
-            }
-            else{
                 return nil
             }
-           
-            
             
         }else{
             return nil

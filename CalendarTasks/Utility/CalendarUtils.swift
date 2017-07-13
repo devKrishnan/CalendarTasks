@@ -23,3 +23,26 @@ func years(beginYear : Int, count: Int) -> [Year]? {
         return yearList
     }
 }
+//dayIndex begins from 0 ....
+func dayInMonth(fromdayIndex dayIndex: Int, inYear year : Year)->(Int?,Month?){
+    //IMproved the  performance by removng the forloop as this affects the performance of the scroll
+    var totalDays = 0
+    var dayInMonth : Int = 0
+    var currentMonth : Month?
+    if dayIndex < year.totalDays {
+        for month in year.monthList {
+            totalDays = totalDays + month.totalDays
+            if dayIndex < totalDays{
+                dayInMonth = dayIndex - (totalDays-month.totalDays)
+                currentMonth = month
+                break
+            }
+        }
+        return (dayInMonth :dayInMonth , month: currentMonth )
+    }else{
+        return (dayInMonth : nil , month: nil )
+    }
+    
+}
+
+

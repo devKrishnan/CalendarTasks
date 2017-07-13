@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="DayHeaderView" customModule="CalendarTasks" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8h-4Y-7lW">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="J8h-4Y-7lW" secondAttribute="trailing" id="0Fs-I0-VWk"/>
+                <constraint firstItem="J8h-4Y-7lW" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OVJ-dF-g6P"/>
+                <constraint firstItem="J8h-4Y-7lW" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="V8n-kd-2x1"/>
+                <constraint firstItem="J8h-4Y-7lW" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" id="eoT-8s-Rz9"/>
+                <constraint firstItem="J8h-4Y-7lW" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="fOY-Ju-MLk"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="day" destination="J8h-4Y-7lW" id="Dkc-1s-We6"/>
+            </connections>
+            <point key="canvasLocation" x="34.5" y="-255"/>
+        </view>
+    </objects>
+</document>

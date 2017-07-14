@@ -19,6 +19,8 @@ class TasksTableViewController: UITableViewController {
         let nib = UINib(nibName: "DayHeaderView", bundle: nil)
         self.tableView.register(nib, forHeaderFooterViewReuseIdentifier: sectionHeaderReuseIdentifier)
         self.tableView.reloadData()
+        self.tableView.estimatedRowHeight = 100
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -47,7 +49,7 @@ class TasksTableViewController: UITableViewController {
             
             let (index, month) = dayInMonth(fromdayIndex: section, inYear: year)
             if let dayIndex = index, let currentMonth = month  {
-                let weekDaysTitle = dateFormatter.weekdaySymbols[ (dayIndex + currentMonth.firstDay) % 7 ]
+                let weekDaysTitle = dateFormatter.weekdaySymbols[ (dayIndex + currentMonth.firstDay) % CalendarConstants.totalNumberOfDaysInWeek ]
                 let monthName = dateFormatter.monthSymbols[currentMonth.month-1]
                 let day  = currentMonth.dayList[dayIndex]
                     let title = weekDaysTitle + " " + String(describing: day.day) + " " + monthName
@@ -62,15 +64,13 @@ class TasksTableViewController: UITableViewController {
         }
     }
     
-    public override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat{
-        return 20
-    }
+   
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         
         //let day =
         let cell = tableView.dequeueReusableCell(withIdentifier: "EventCell", for: indexPath)
-
+        
         return cell
     }
     

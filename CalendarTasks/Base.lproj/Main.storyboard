@@ -155,44 +155,59 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="121.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDN-pi-GRu">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDN-pi-GRu">
                                             <rect key="frame" x="16" y="4" width="65" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01G-CA-OMI">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="01G-CA-OMI">
                                             <rect key="frame" x="16" y="24" width="56" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vqi-DE-5J2">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vqi-DE-5J2">
                                             <rect key="frame" x="93" y="3" width="25" height="25"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWo-SX-BYw">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWo-SX-BYw">
                                             <rect key="frame" x="137" y="4" width="230" height="43"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDS-mr-M5O">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDS-mr-M5O">
                                             <rect key="frame" x="137" y="90" width="230" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EKt-OO-11u">
+                                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EKt-OO-11u">
                                             <rect key="frame" x="140" y="45" width="227" height="40"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </stackView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="EKt-OO-11u" firstAttribute="leading" secondItem="01G-CA-OMI" secondAttribute="trailing" constant="68" id="6pN-Du-L1H"/>
+                                        <constraint firstItem="dDS-mr-M5O" firstAttribute="top" secondItem="EKt-OO-11u" secondAttribute="bottom" constant="5" id="Uys-QM-b1l"/>
+                                        <constraint firstItem="vqi-DE-5J2" firstAttribute="leading" secondItem="dDN-pi-GRu" secondAttribute="trailing" constant="12" id="W5v-Gw-DhI"/>
+                                        <constraint firstItem="EKt-OO-11u" firstAttribute="top" secondItem="LWo-SX-BYw" secondAttribute="bottom" id="W7r-ii-tpI"/>
+                                        <constraint firstItem="LWo-SX-BYw" firstAttribute="leading" secondItem="vqi-DE-5J2" secondAttribute="trailing" constant="19" id="dM9-JD-WzH"/>
+                                        <constraint firstItem="01G-CA-OMI" firstAttribute="top" secondItem="dDN-pi-GRu" secondAttribute="bottom" constant="-1" id="wNW-jX-7pg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstItem="dDN-pi-GRu" firstAttribute="top" secondItem="ygS-9s-FFQ" secondAttribute="top" constant="4" id="Bpa-5T-VUb"/>
+                                    <constraint firstAttribute="bottom" secondItem="dDS-mr-M5O" secondAttribute="bottom" constant="11" id="NvI-8L-bw3"/>
+                                    <constraint firstAttribute="trailing" secondItem="dDS-mr-M5O" secondAttribute="trailing" constant="8" id="Pib-bu-eUN"/>
+                                    <constraint firstItem="EKt-OO-11u" firstAttribute="leading" secondItem="ygS-9s-FFQ" secondAttribute="leading" constant="140" id="TRm-gi-yd9"/>
+                                    <constraint firstItem="dDN-pi-GRu" firstAttribute="leading" secondItem="ygS-9s-FFQ" secondAttribute="leading" constant="16" id="gsw-Ke-QgX"/>
+                                    <constraint firstItem="01G-CA-OMI" firstAttribute="leading" secondItem="ygS-9s-FFQ" secondAttribute="leading" constant="16" id="pau-Me-XbO"/>
+                                    <constraint firstAttribute="bottom" secondItem="01G-CA-OMI" secondAttribute="bottom" constant="77" id="qFT-9z-k3Y"/>
+                                    <constraint firstItem="vqi-DE-5J2" firstAttribute="top" secondItem="ygS-9s-FFQ" secondAttribute="top" constant="3" id="wN0-nr-sth"/>
+                                    <constraint firstAttribute="trailing" secondItem="EKt-OO-11u" secondAttribute="trailing" constant="8" id="wen-oe-48K"/>
+                                    <constraint firstAttribute="bottom" secondItem="vqi-DE-5J2" secondAttribute="bottom" constant="94" id="wfx-Le-gKR"/>
+                                    <constraint firstItem="dDS-mr-M5O" firstAttribute="leading" secondItem="ygS-9s-FFQ" secondAttribute="leading" constant="137" id="yQV-vQ-WWR"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="duration" destination="01G-CA-OMI" id="OlL-xn-dw9"/>
                                     <outlet property="indicator" destination="vqi-DE-5J2" id="MUz-iH-6FX"/>

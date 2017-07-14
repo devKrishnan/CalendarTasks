@@ -87,9 +87,12 @@ struct Year {
         }
         return monthList[currentMonth.month]
     }
-//    isLeapYear ()->Bool{
-//    
-//    }
+    static func nextYear (year : Year) -> Year?{
+        return Year(currentYear: year.year)
+    }
+    static func prevYear (year : Year) -> Year?{
+        return Year(currentYear: year.year)
+    }
     init?(currentYear : Int) {
         if currentYear <= 0 {
             return nil
